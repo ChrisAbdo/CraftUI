@@ -47,13 +47,16 @@ export function Search() {
         </kbd>
       </p> */}
       <Button
-        variant="outline"
+        variant="secondary"
         size="sm"
-        className="px-12 text-left"
+        className="flex justify-between items-center gap-2 text-muted-foreground"
         onClick={() => setOpen((open) => !open)}
       >
         <MagnifyingGlassIcon className="h-4 w-4 mr-2" />
-        Search Crafts...
+        <p>Search Crafts...</p>
+        <kbd className="ml-2 pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+          <span className="text-xs">⌘</span>J
+        </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
