@@ -5,9 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RocketIcon, StarIcon } from "@radix-ui/react-icons";
 
-import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Search } from "./search";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -37,9 +37,10 @@ export default function Navbar() {
         </div>
         <div className="flex items-center space-x-2">
           <Search />
-          <Button size="sm">
+          <Button size="sm" className="hidden md:flex">
             <StarIcon className="h-5 w-5 mr-2" /> Star on GitHub
           </Button>
+          <ModeToggle />
         </div>
       </nav>
     </header>
